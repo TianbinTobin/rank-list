@@ -39,8 +39,8 @@
 <style scoped>
   .top {
     width: 100%;
-    height: 22rem;
-    padding-top: 3rem;
+    height: 20rem;
+    padding-top: 2rem;
     box-sizing: border-box;
     background-color: #27D4D7;
   }
@@ -49,7 +49,7 @@
     float: left;
     width: 35%;
     height: 100%;
-    padding: 0 8%;
+    padding: 0 6%;
     box-sizing: border-box;
   }
 
@@ -103,7 +103,7 @@
     float: left;
     width: 35%;
     height: 100%;
-    padding: 0 8%;
+    padding: 0 6%;
     box-sizing: border-box;
   }
 
@@ -126,11 +126,11 @@
   }
 
   .top_p {
-    width: 11rem;
+    width: 9.2rem;
     border-radius: 50%;
     background-size: cover;
     position: relative;
-    margin: 0 auto;
+    margin: 1.5rem auto 0;
   }
 
   .top_p:after {

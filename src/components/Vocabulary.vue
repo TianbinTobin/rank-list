@@ -5,7 +5,7 @@
         <span>词汇量排行榜</span>
       </div>
     </div>
-    <div class="body">
+    <div class="body" v-if="data.length > 0">
       <top-list :studentData="data"></top-list>
       <rank-list :studentData="data"></rank-list>
     </div>

@@ -11,16 +11,16 @@ export default new Router({
       component: resolve => {
         require.ensure(['../components/Vocabulary.vue'], () => {
           resolve(require('../components/Vocabulary.vue'))
-        })
+        }, 'vocabulary')
       }
     },
     {
-      path: '/this',
-      name: 'this',
+      path: '/current',
+      name: 'current',
       component: resolve => {
         require.ensure(['../components/ThisWeekRank.vue'], () => {
           resolve(require('../components/ThisWeekRank.vue'))
-        })
+        }, 'current')
       }
     },
     {
@@ -29,7 +29,7 @@ export default new Router({
       component: resolve => {
         require.ensure(['../components/LastWeekRank.vue'], () => {
           resolve(require('../components/LastWeekRank.vue'))
-        })
+        }, 'last')
       }
     }
   ]
