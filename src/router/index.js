@@ -13,6 +13,24 @@ export default new Router({
           resolve(require('../components/Vocabulary.vue'))
         })
       }
+    },
+    {
+      path: '/this',
+      name: 'this',
+      component: resolve => {
+        require.ensure(['../components/ThisWeekRank.vue'], () => {
+          resolve(require('../components/ThisWeekRank.vue'))
+        })
+      }
+    },
+    {
+      path: '/last',
+      name: 'last',
+      component: resolve => {
+        require.ensure(['../components/LastWeekRank.vue'], () => {
+          resolve(require('../components/LastWeekRank.vue'))
+        })
+      }
     }
   ]
 })

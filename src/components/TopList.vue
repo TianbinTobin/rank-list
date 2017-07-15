@@ -1,25 +1,25 @@
 <template>
   <div class="top">
     <div class="top_l">
-      <div class="top_s_p">
+      <div class="top_s_p" :style="{backgroundImage: 'url(' + studentData[1].photo + ')'}">
         <div class="top_l_icon"></div>
       </div>
-      <div class="top_score">123</div>
-      <div class="top_user">李小萌</div>
+      <div class="top_score">{{studentData[0].number}}</div>
+      <div class="top_user">{{studentData[0].studentName}}</div>
     </div>
     <div class="top_m">
-      <div class="top_p" :style="{backgroundImage: 'url(' + img + ')'}">
+      <div class="top_p" :style="{backgroundImage: 'url(' + studentData[0].photo + ')'}">
         <div class="top_m_icon"></div>
       </div>
-      <div class="top_score">123</div>
-      <div class="top_user">李小萌</div>
+      <div class="top_score">{{studentData[1].number}}</div>
+      <div class="top_user">{{studentData[1].studentName}}</div>
     </div>
     <div class="top_r">
-      <div class="top_s_p">
+      <div class="top_s_p" :style="{backgroundImage: 'url(' + studentData[2].photo + ')'}">
         <div class="top_r_icon"></div>
       </div>
-      <div class="top_score">123</div>
-      <div class="top_user">李小萌</div>
+      <div class="top_score">{{studentData[2].number}}</div>
+      <div class="top_user">{{studentData[2].studentName}}</div>
     </div>
   </div>
 </template>
@@ -31,7 +31,8 @@
       return {
         img: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png'
       }
-    }
+    },
+    props: ['studentData']
   }
 </script>
 
@@ -107,17 +108,17 @@
   }
 
   .top_s_p {
-    margin-top: 50%;
-    width: 100%;
+    width: 7rem;
     border-radius: 50%;
     background-size: cover;
     position: relative;
+    margin: 4rem auto 0;
   }
 
   .top_s_p:after {
     content: '';
     display: block;
-    padding-bottom: 100%; /* margin 百分比相对父元素宽度计算 */
+    padding-bottom: 100%; /* padding 百分比相对父元素宽度计算 */
     box-sizing: border-box;
     border: 1px solid #FFFFFF;
     border-radius: 50%;
@@ -125,16 +126,17 @@
   }
 
   .top_p {
-    width: 100%;
+    width: 11rem;
     border-radius: 50%;
     background-size: cover;
     position: relative;
+    margin: 0 auto;
   }
 
   .top_p:after {
     content: '';
     display: block;
-    padding-bottom: 100%; /* margin 百分比相对父元素宽度计算 */
+    padding-bottom: 100%; /* padding 百分比相对父元素宽度计算 */
     box-sizing: border-box;
     border: 1px solid #FFFFFF;
     border-radius: 50%;

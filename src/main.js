@@ -3,10 +3,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import axios from 'axios'
 import 'normalize.css'
 import './assets/app.css'
 
 Vue.config.productionTip = false
+
+axios.defaults.baseURL = ' http://192.168.0.203:8000'
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 /* eslint-disable no-new */
 new Vue({

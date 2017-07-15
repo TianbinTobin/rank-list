@@ -4,8 +4,8 @@
     <div class="photo fl">
       <img :src="player.photo">
     </div>
-    <div class="user fl">{{player.name}}</div>
-    <div class="score fr">{{player.score}}个</div>
+    <div class="user fl">{{player.studentName}}</div>
+    <div class="score fr">{{player.number}}个</div>
   </div>
 </template>
 
