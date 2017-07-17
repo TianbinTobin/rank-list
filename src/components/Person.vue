@@ -49,7 +49,10 @@
         </div>
         <div class="info">
           <div class="info_label fl">PK段位</div>
-          <div class="info_text fr">黄金V</div>
+          <div class="info_text fr">
+            <i class="info_level level_6"></i>
+            <span class="info_level_label">黄金5</span>
+          </div>
         </div>
         <div class="info">
           <div class="info_label fl">PK次数</div>
@@ -60,7 +63,7 @@
           <div class="info_text fr">186</div>
         </div>
         <div class="info">
-          <span>此数据来源于 —— 《Tank English》</span>
+          <span class="info_from">此数据来源于 —— 《Tank English》</span>
         </div>
       </div>
     </div>
@@ -106,8 +109,8 @@
     width: 100%;
     background: #FEFEFE;
     margin-bottom: 1px;
-    height: 5rem;
-    line-height: 5rem;
+    height: 6rem;
+    line-height: 6rem;
     font-size: 1.6rem;
     color: #747578;
     letter-spacing: 0;
@@ -130,7 +133,59 @@
     box-sizing: border-box;
   }
 
-  .info span {
+  .info_level {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+
+  .level_1 {
+    width: 60px;
+    height: 48px;
+    background: url("../assets/icon_qingtong@2x.png") no-repeat;
+    background-size: cover;
+  }
+
+  .level_2 {
+    width: 60px;
+    height: 48px;
+    background: url("../assets/icon_baiyin@2x.png") no-repeat;
+    background-size: cover;
+  }
+
+  .level_3 {
+    width: 70px;
+    height: 44px;
+    background: url("../assets/icon_huangjin@2x.png") no-repeat;
+    background-size: cover;
+  }
+
+  .level_4 {
+    width: 60px;
+    height: 50px;
+    background: url("../assets/icon_bojin@2x.png") no-repeat;
+    background-size: cover;
+  }
+
+  .level_5 {
+    width: 60px;
+    height: 45px;
+    background: url("../assets/icon_zuanshi@2x.png") no-repeat;
+    background-size: cover;
+  }
+
+  .level_6 {
+    width: 80px;
+    height: 55px;
+    background: url("../assets/icon_zuiqiang@2x.png") no-repeat;
+    background-size: cover;
+  }
+
+  .info_level_label {
+    vertical-align: middle;
+  }
+
+  .info .info_from {
     font-size: 1.2rem;
   }
 
