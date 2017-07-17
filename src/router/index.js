@@ -31,6 +31,15 @@ export default new Router({
           resolve(require('../components/LastWeekRank.vue'))
         }, 'last')
       }
+    },
+    {
+      path: '/person',
+      name: 'person',
+      component: resolve => {
+        require.ensure(['../components/Person.vue'], () => {
+          resolve(require('../components/Person.vue'))
+        }, 'person')
+      }
     }
   ]
 })
