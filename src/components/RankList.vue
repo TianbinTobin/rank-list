@@ -1,6 +1,6 @@
 <template>
   <div class="rank">
-    <rank-list-item v-for="(item, index) in studentData" :key="item" :player="item" :index="index"></rank-list-item>
+    <rank-list-item v-for="(item, index) in studentData" :key="item.id" :player="item" :index="index"></rank-list-item>
   </div>
 </template>
 

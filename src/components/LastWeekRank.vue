@@ -23,7 +23,38 @@
     name: 'last',
     data: function () {
       return {
-        data: []
+        data: [
+          {
+            id: 1,
+            photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',
+            studentName: '田斌',
+            number: 135
+          },
+          {
+            id: 2,
+            photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',
+            studentName: '田斌',
+            number: 135
+          },
+          {
+            id: 3,
+            photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',
+            studentName: '田斌',
+            number: 135
+          },
+          {
+            id: 4,
+            photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',
+            studentName: '田斌',
+            number: 135
+          },
+          {
+            id: 5,
+            photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',
+            studentName: '田斌',
+            number: 135
+          }
+        ]
       }
     },
     components: {

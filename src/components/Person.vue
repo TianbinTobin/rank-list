@@ -35,7 +35,7 @@
           <div class="info_label fl">收到的赞</div>
           <div class="info_text fr">56</div>
         </div>
-        <div class="info m_b">
+        <div class="info m_b_10">
           <div class="info_label fl">收到的警告</div>
           <div class="info_text fr">5</div>
         </div>
@@ -43,7 +43,7 @@
           <div class="info_label fl">正确率</div>
           <div class="info_text fr">65%</div>
         </div>
-        <div class="info m_b">
+        <div class="info m_b_10">
           <div class="info_label fl">完成率</div>
           <div class="info_text fr">89%</div>
         </div>
@@ -58,7 +58,7 @@
           <div class="info_label fl">PK次数</div>
           <div class="info_text fr">354</div>
         </div>
-        <div class="info m_b">
+        <div class="info m_b_10">
           <div class="info_label fl">胜利次数</div>
           <div class="info_text fr">186</div>
         </div>
@@ -118,7 +118,7 @@
   }
 
   .info_label {
-    width: 50%;
+    width: 40%;
     height: 100%;
     text-align: left;
     padding: 0 2rem;
@@ -126,7 +126,7 @@
   }
 
   .info_text {
-    width: 50%;
+    width: 60%;
     height: 100%;
     text-align: right;
     padding: 0 2rem;
@@ -140,43 +140,43 @@
   }
 
   .level_1 {
-    width: 60px;
-    height: 48px;
+    width: 6rem;
+    height: 4.8rem;
     background: url("../assets/icon_qingtong@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_2 {
-    width: 60px;
-    height: 48px;
+    width: 6rem;
+    height: 4.8rem;
     background: url("../assets/icon_baiyin@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_3 {
-    width: 70px;
-    height: 44px;
+    width: 7rem;
+    height: 4.4rem;
     background: url("../assets/icon_huangjin@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_4 {
-    width: 60px;
-    height: 50px;
+    width: 6rem;
+    height: 5rem;
     background: url("../assets/icon_bojin@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_5 {
-    width: 60px;
-    height: 45px;
+    width: 6rem;
+    height: 4.5rem;
     background: url("../assets/icon_zuanshi@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_6 {
-    width: 80px;
-    height: 55px;
+    width: 8rem;
+    height: 5.5rem;
     background: url("../assets/icon_zuiqiang@2x.png") no-repeat;
     background-size: cover;
   }
@@ -189,7 +189,7 @@
     font-size: 1.2rem;
   }
 
-  .m_b {
+  .m_b_10 {
     margin-bottom: 10px;
   }
 </style>
