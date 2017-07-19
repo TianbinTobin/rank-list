@@ -1,11 +1,15 @@
 <template>
-  <div class="rank_i">
+  <div class="rank_i" :class="{ isOneself: isOneself }">
     <div class="order fl" :class="order">{{orderLabel}}</div>
     <div class="photo fl">
       <img :src="player.photo">
     </div>
     <div class="user fl">{{player.studentName}}</div>
-    <div class="score fr">{{player.number}}个</div>
+    <div class="score fr">
+      <div v-show="isOneself" class="score_top">距离上一名：11{{scoreLabel}}</div>
+      <div class="score_label">{{player.number}}{{scoreLabel}}</div>
+      <div v-show="isOneself" class="score_bottom">距离下一名：11{{scoreLabel}}</div>
+    </div>
   </div>
 </template>
 
@@ -14,7 +18,8 @@
     name: 'rank-list-item',
     data () {
       return {
-        img: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png'
+        scoreLabel: '分',
+        isOneself: false
       }
     },
     computed: {
@@ -41,7 +46,15 @@
         }
       }
     },
-    props: ['player', 'index']
+    props: ['player', 'index'],
+    created () {
+      if (this.$route.name === 'vocabulary') {
+        this.scoreLabel = '个'
+      }
+      if (this.player.id === 4) {
+        this.isOneself = true
+      }
+    }
   }
 </script>
 
@@ -49,8 +62,16 @@
   .rank_i {
     width: 100%;
     height: 7rem;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     box-sizing: border-box;
+  }
+
+  .isOneself {
+    width: 100%;
+    height: 9rem;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    background: #EEF9F9;
   }
 
   .order {
@@ -104,10 +125,29 @@
   }
 
   .score {
+    min-width: 10rem;
     height: 5rem;
+    color: #404040;
+    position: relative;
+    text-align: right;
+  }
+
+  .score_label {
     line-height: 5rem;
     font-size: 1.8rem;
-    color: #404040;
-    letter-spacing: 0;
+  }
+
+  .score_top {
+    position: absolute;
+    top: -1rem;
+    font-size: 1.1rem;
+    color: #B1B1B1;
+  }
+
+  .score_bottom {
+    position: absolute;
+    bottom: -1rem;
+    font-size: 1.1rem;
+    color: #B1B1B1;
   }
 </style>

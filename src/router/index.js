@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path: '/vocabulary',
-      name: 'Vocabulary',
+      name: 'vocabulary',
       component: resolve => {
         require.ensure(['../components/Vocabulary.vue'], () => {
           resolve(require('../components/Vocabulary.vue'))
