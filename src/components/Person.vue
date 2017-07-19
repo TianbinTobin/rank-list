@@ -76,7 +76,7 @@
 <script>
   import TopList from './TopList.vue'
   import RankList from './RankList.vue'
-  //  import api from '../api/rank'
+  import api from '../api/rank'
   export default {
     name: 'person',
     data: function () {
@@ -90,11 +90,11 @@
     },
     mounted () {
       this.query = this.$route.query
-//      api.getPersonInfo(this.query.studentId, this.query.classId, this.query.access_token).then(res => {
-//        if (res.data.code === 0) {
-//          this.data = res.data.result.data
-//        }
-//      })
+      api.getPersonInfo(this.query.studentId, this.query.access_token).then(res => {
+        if (res.data.code === 0) {
+          this.data = res.data.result.data
+        }
+      })
     }
   }
 </script>

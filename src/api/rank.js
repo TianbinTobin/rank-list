@@ -14,7 +14,7 @@ export default {
   getWordRankList (studentId, classId, access_token) {
     return Axios.get('/teach/student/vocabularyMasterList', {params: {studentId, classId, access_token}})
   },
-  getPersonInfo (studentId, classId, access_token) {
-    return Axios.get('/teach/student/vocabularyMasterList', {params: {studentId, classId, access_token}})
+  getPersonInfo (studentId, access_token) {
+    return Axios.get('/teach/student/baseStudentStatistic', {params: {studentId, access_token}})
   }
 }
