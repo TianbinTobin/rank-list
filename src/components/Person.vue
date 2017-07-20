@@ -5,47 +5,47 @@
         <span>个人成绩单</span>
       </div>
     </div>
-    <div class="body">
+    <div class="body" v-if="data !== ''">
       <div class="person">
         <div class="info">
           <div class="info_label fl">已掌握词汇量</div>
-          <div class="info_text fr">332</div>
+          <div class="info_text fr">{{data.masterVocabulary}}</div>
         </div>
         <div class="info">
           <div class="info_label fl">未掌握词汇量</div>
-          <div class="info_text fr">33</div>
+          <div class="info_text fr">{{data.noMasterVocabulary}}</div>
         </div>
         <div class="info">
           <div class="info_label fl">总学习时长</div>
-          <div class="info_text fr">20小时13分25秒</div>
+          <div class="info_text fr">{{timeSum}}</div>
         </div>
         <div class="info">
           <div class="info_label fl">满分次数</div>
-          <div class="info_text fr">24</div>
+          <div class="info_text fr">{{data.fullMarkNum}}</div>
         </div>
         <div class="info">
           <div class="info_label fl">不及格次数</div>
-          <div class="info_text fr">12</div>
+          <div class="info_text fr">{{data.failNum}}</div>
         </div>
         <div class="info">
           <div class="info_label fl">未完成次数</div>
-          <div class="info_text fr">3</div>
+          <div class="info_text fr">{{data.unfinishedNum}}</div>
         </div>
         <div class="info">
           <div class="info_label fl">收到的赞</div>
-          <div class="info_text fr">56</div>
+          <div class="info_text fr">{{data.praiseNum}}</div>
         </div>
         <div class="info m_b_10">
           <div class="info_label fl">收到的警告</div>
-          <div class="info_text fr">5</div>
+          <div class="info_text fr">{{data.warningNum}}</div>
         </div>
         <div class="info">
           <div class="info_label fl">正确率</div>
-          <div class="info_text fr">65%</div>
+          <div class="info_text fr">{{data.rightRatio}}%</div>
         </div>
         <div class="info m_b_10">
           <div class="info_label fl">完成率</div>
-          <div class="info_text fr">89%</div>
+          <div class="info_text fr">{{data.completeRatio}}%</div>
         </div>
         <div class="info">
           <div class="info_label fl">PK段位</div>
@@ -56,11 +56,11 @@
         </div>
         <div class="info">
           <div class="info_label fl">PK次数</div>
-          <div class="info_text fr">354</div>
+          <div class="info_text fr">{{data.pkNum}}</div>
         </div>
         <div class="info m_b_10">
           <div class="info_label fl">胜利次数</div>
-          <div class="info_text fr">186</div>
+          <div class="info_text fr">{{data.victoryNum}}</div>
         </div>
         <div class="info">
           <span class="info_from">此数据来源于 —— 《Tank English》</span>
@@ -77,11 +77,59 @@
   import TopList from './TopList.vue'
   import RankList from './RankList.vue'
   import api from '../api/rank'
+
   export default {
     name: 'person',
     data: function () {
       return {
-        data: []
+        data: '',
+        date: {
+          completeRatio: 8,
+          danId: 0,
+          failNum: 0,
+          fullMarkNum: 0,
+          masterVocabulary: 0,
+          noMasterVocabulary: 0,
+          pkNum: 2,
+          praiseNum: 4,
+          rightRatio: 120,
+          studentId: 3,
+          timeSum: 11698708,
+          unfinishedNum: 5,
+          victoryNum: 0,
+          warningNum: 0,
+          yesterdayScore: 10
+        }
+      }
+    },
+    computed: {
+      timeSum () {
+        let hours = 0
+        let minutes = 0
+        let seconds = 0
+        let remainTime = 0
+        let time = ''
+        if (Math.floor(this.data.timeSum / 3600000) > 1) {
+          hours = Math.floor(this.data.timeSum / 3600000)
+        }
+        remainTime = this.data.timeSum % 3600000
+        if (Math.floor(remainTime / 60000) > 1) {
+          minutes = Math.floor(remainTime / 60000)
+        }
+        remainTime = remainTime % 60000
+        if (Math.floor(remainTime / 1000) > 1) {
+          seconds = Math.floor(remainTime / 1000)
+        }
+        if (hours > 0) {
+          time += hours + '小时'
+        }
+        if (minutes > 0) {
+          time += minutes + '分'
+        }
+        if (seconds > 0) {
+          time += seconds + '秒'
+        }
+        return time
       }
     },
     components: {
@@ -89,6 +137,7 @@
       RankList
     },
     mounted () {
+      this.data = this.date
       this.query = this.$route.query
       api.getPersonInfo(this.query.studentId, this.query.access_token).then(res => {
         if (res.data.code === 0) {
