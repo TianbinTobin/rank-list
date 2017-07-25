@@ -139,6 +139,7 @@
     mounted () {
       this.data = this.date
       this.query = this.$route.query
+      // 调用个人成绩单接口
       api.getPersonInfo(this.query.studentId, this.query.access_token).then(res => {
         if (res.data.code === 0) {
           this.data = res.data.result.data
