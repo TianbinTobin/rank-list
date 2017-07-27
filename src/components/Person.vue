@@ -77,7 +77,6 @@
   import TopList from './TopList.vue'
   import RankList from './RankList.vue'
   import api from '../api/rank'
-
   export default {
     name: 'person',
     data: function () {
