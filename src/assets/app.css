@@ -6,6 +6,11 @@ html, body {
 html {
   font-size: 62.5%; /* 10÷16=62.5% */
 }
+@media only screen and (max-width: 320px){
+  html {
+    font-size: 60%!important; /* 9.6÷16=60% */
+  }
+}
 @media only screen and (min-width: 481px){
   html {
     font-size: 94%!important; /* 15.04÷16=94% */

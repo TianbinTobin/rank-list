@@ -10,7 +10,7 @@ import 'babel-polyfill'
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = ' http://192.168.0.203:8000'
+axios.defaults.baseURL = 'http://192.168.0.203:8000'
 
 /* eslint-disable no-new */
 new Vue({

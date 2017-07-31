@@ -40,6 +40,15 @@ export default new Router({
           resolve(require('../components/Person.vue'))
         }, 'person')
       }
+    },
+    {
+      path: '/result',
+      name: 'result',
+      component: resolve => {
+        require.ensure(['../components/PKResult.vue'], () => {
+          resolve(require('../components/PKResult.vue'))
+        }, 'result')
+      }
     }
   ]
 })

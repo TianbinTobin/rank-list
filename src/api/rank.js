@@ -43,5 +43,15 @@ export default {
    */
   getPersonInfo (studentId, access_token) {
     return Axios.get('/teach/student/baseStudentStatistic', {params: {studentId, access_token}})
+  },
+  /**
+   * pk实时对战结果
+   * @param studentId
+   * @param friendId
+   * @param access_token
+   * @returns {AxiosPromise}
+   */
+  getPKResult (studentId, friendId, access_token) {
+    return Axios.get('/socket/userStudentPk/realTimeResult', {params: {studentId, friendId, access_token}})
   }
 }

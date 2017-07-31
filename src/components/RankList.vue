@@ -6,6 +6,7 @@
 
 <script>
   import RankListItem from './RankListItem.vue'
+
   export default {
     name: 'rank-list',
     data () {
