@@ -215,11 +215,10 @@
       }
     },
     mounted () {
-      this.data = this.date
       this.query = this.$route.query
       // 调用个人成绩单接口
       api.getPKResult(this.query.studentId, this.query.friendId, this.query.access_token).then(res => {
-        if (res.data.code === 0) {
+        if (res && res.data.code === 0) {
           this.data = res.data.result.data
         }
       })
@@ -243,12 +242,12 @@
   }
 
   .result_player {
-    width: 10rem;
+    width: 9rem;
     height: 100%;
   }
 
   .icon_pk_box {
-    width: 8.5rem;
+    width: 10.5rem;
     padding-top: 2.5rem;
     margin-right: 1.5rem;
     box-sizing: border-box;
@@ -264,12 +263,12 @@
 
   .player_label {
     width: 100%;
-    height: 3rem;
+    height: 4rem;
   }
 
   .player_logo {
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
     border-radius: 50%;
     overflow: hidden;
     box-sizing: border-box;
