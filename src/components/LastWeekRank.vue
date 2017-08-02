@@ -24,7 +24,8 @@
     name: 'last',
     data: function () {
       return {
-        data: [
+        data: [],
+        date: [
           {
             id: 1,
             photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',

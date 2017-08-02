@@ -5,7 +5,7 @@
         <span>个人成绩单</span>
       </div>
     </div>
-    <div class="body" v-if="data !== ''">
+    <div class="body" v-if="data !== null">
       <div class="person">
         <div class="info">
           <div class="info_label fl">已掌握词汇量</div>
@@ -82,7 +82,7 @@
     name: 'person',
     data: function () {
       return {
-        data: '',
+        data: null,
         date: {
           completeRatio: 8,
           danId: 0,
@@ -137,7 +137,6 @@
       RankList
     },
     mounted () {
-      this.data = this.date
       this.query = this.$route.query
       // 调用个人成绩单接口
       api.getPersonInfo(this.query.studentId, this.query.access_token).then(res => {
