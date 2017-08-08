@@ -49,6 +49,15 @@ export default new Router({
           resolve(require('../components/PKResult.vue'))
         }, 'result')
       }
+    },
+    {
+      path: '/terms',
+      name: 'terms',
+      component: resolve => {
+        require.ensure(['../components/TermsOfUse.vue'], () => {
+          resolve(require('../components/TermsOfUse.vue'))
+        }, 'terms')
+      }
     }
   ]
 })
