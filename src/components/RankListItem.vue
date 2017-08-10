@@ -2,7 +2,7 @@
   <div class="rank_i" :class="{ isOneself: isOneself }">
     <div class="order fl" :class="order">{{orderLabel}}</div>
     <div class="photo fl">
-      <img :src="player.photo">
+      <img src="../assets/player_0_logo.png" :src="player.photo">
     </div>
     <div class="user fl">{{player.studentName}}</div>
     <div class="score fr">
@@ -19,7 +19,8 @@
     data () {
       return {
         scoreLabel: '分',
-        isOneself: false
+        isOneself: false,
+        defaultLogo: require('../assets/player_0_logo.png')
       }
     },
     computed: {
@@ -54,6 +55,14 @@
       if (this.player.id === 4) {
         this.isOneself = true
       }
+    },
+    mounted () {
+      let _this = this
+      let image = new Image()
+      image.onerror = function () {
+        _this.player.photo = _this.defaultLogo
+      }
+      image.src = _this.player.photo
     }
   }
 </script>

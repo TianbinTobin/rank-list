@@ -29,10 +29,28 @@
     name: 'top-list',
     data () {
       return {
-        img: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png'
+        defaultLogo: require('../assets/player_0_logo.png')
       }
     },
-    props: ['studentData']
+    props: ['studentData'],
+    mounted () {
+      let _this = this
+      let imageM = new Image()
+      imageM.onerror = function () {
+        _this.studentData[0].photo = _this.defaultLogo
+      }
+      imageM.src = _this.studentData[0].photo
+      let imageL = new Image()
+      imageL.onerror = function () {
+        _this.studentData[1].photo = _this.defaultLogo
+      }
+      imageL.src = _this.studentData[1].photo
+      let imageR = new Image()
+      imageR.onerror = function () {
+        _this.studentData[2].photo = _this.defaultLogo
+      }
+      imageR.src = _this.studentData[2].photo
+    }
   }
 </script>
 
