@@ -2,7 +2,7 @@
   <div class="app">
     <div class="header">
       <div class="title">
-        <span>上周排行榜</span>
+        <span>昨日排行榜</span>
       </div>
     </div>
     <div class="body" v-if="data.length > 0">

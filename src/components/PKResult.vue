@@ -8,7 +8,7 @@
             <img src="../assets/player_0_logo.png" :src="userPhoto">
           </div>
           <div class="player_info">
-            <div class="player_name">{{data.myUserStudentPk.accountName}}</div>
+            <div class="player_name">{{data.myUserStudentPk.realName ? data.myUserStudentPk.realName : data.myUserStudentPk.accountName}}</div>
             <div class="player_score">{{data.myPkDetail.score}}</div>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <img src="../assets/player_0_logo.png" :src="friendPhoto">
           </div>
           <div class="player_info">
-            <div class="player_name">{{data.friendUserStudentPk.accountName}}</div>
+            <div class="player_name">{{data.friendUserStudentPk.realName ? data.friendUserStudentPk.realName : data.friendUserStudentPk.accountName}}</div>
             <div class="player_score">{{data.friendPkDetail.score}}</div>
           </div>
         </div>

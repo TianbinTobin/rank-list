@@ -6,7 +6,7 @@ import Axios from 'axios'
 
 export default {
   /**
-   * 上周排行榜
+   * 昨日排行榜
    * @param studentId 学生id
    * @param classId   班级id
    * @param access_token token
