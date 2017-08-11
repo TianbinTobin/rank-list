@@ -59,5 +59,14 @@ export default new Router({
         }, 'terms')
       }
     }
+    // {
+    //   path: '/performance',
+    //   name: 'performance',
+    //   component: resolve => {
+    //     require.ensure(['../components/Performance.vue'], () => {
+    //       resolve(require('../components/Performance.vue'))
+    //     }, 'performance')
+    //   }
+    // }
   ]
 })

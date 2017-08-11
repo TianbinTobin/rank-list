@@ -50,8 +50,8 @@
         <div class="info">
           <div class="info_label fl">PK段位</div>
           <div class="info_text fr">
-            <i class="info_level level_6"></i>
-            <span class="info_level_label">黄金5</span>
+            <i class="info_level" :class="danCss"></i>
+            <span class="info_level_label">{{danLabel}}{{levelLabel}}</span>
           </div>
         </div>
         <div class="info">
@@ -91,6 +91,7 @@
           masterVocabulary: 0,
           noMasterVocabulary: 0,
           pkNum: 2,
+          levelId: 0,
           praiseNum: 4,
           rightRatio: 120,
           studentId: 3,
@@ -130,6 +131,45 @@
           time += seconds + '秒'
         }
         return time
+      },
+      danCss () {
+        if (this.data.danId === 1) {
+          return 'level_1'
+        } else if (this.data.danId === 2) {
+          return 'level_2'
+        } else if (this.data.danId === 3) {
+          return 'level_3'
+        } else if (this.data.danId === 4) {
+          return 'level_4'
+        } else if (this.data.danId === 5) {
+          return 'level_5'
+        } else if (this.data.danId === 6) {
+          return 'level_6'
+        }
+      },
+      danLabel () {
+        if (this.data.danId === 1) {
+          return '倔强铜坦'
+        } else if (this.data.danId === 2) {
+          return '秩序银坦'
+        } else if (this.data.danId === 3) {
+          return '荣耀金坦'
+        } else if (this.data.danId === 4) {
+          return '尊贵铂坦'
+        } else if (this.data.danId === 5) {
+          return '永恒钻坦'
+        } else if (this.data.danId === 6) {
+          return '最强王坦'
+        }
+      },
+      levelLabel () {
+        if (this.data.levelId === 0) {
+          return 'Ⅲ'
+        } else if (this.data.levelId === 1) {
+          return 'Ⅰ'
+        } else if (this.data.levelId === 2) {
+          return 'Ⅱ'
+        }
       }
     },
     components: {
