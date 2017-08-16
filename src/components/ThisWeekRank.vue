@@ -65,6 +65,7 @@
     },
     mounted () {
       this.query = this.$route.query
+      document.title = '本周排行榜'
       // 调用本周排行榜接口
       api.getThisRankList(this.query.studentId, this.query.classId, this.query.access_token).then(res => {
         if (res.data.code === 0) {

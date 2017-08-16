@@ -178,6 +178,7 @@
     },
     mounted () {
       this.query = this.$route.query
+      document.title = '个人成绩单'
       // 调用个人成绩单接口
       api.getPersonInfo(this.query.studentId, this.query.access_token).then(res => {
         if (res.data.code === 0) {

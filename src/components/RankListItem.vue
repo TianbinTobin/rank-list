@@ -1,14 +1,14 @@
 <template>
-  <div class="rank_i" :class="{ isOneself: isOneself }">
+  <div class="rank_i" :class="{ isOneself: player.upDifference !== null }">
     <div class="order fl" :class="order">{{orderLabel}}</div>
     <div class="photo fl">
       <img src="../assets/player_0_logo.png" :src="player.photo">
     </div>
     <div class="user fl">{{player.studentName}}</div>
     <div class="score fr">
-      <div v-show="isOneself" class="score_top">距离上一名：11{{scoreLabel}}</div>
-      <div class="score_label">{{player.number}}{{scoreLabel}}</div>
-      <div v-show="isOneself" class="score_bottom">距离下一名：11{{scoreLabel}}</div>
+      <div v-show="player.upDifference !== null" class="score_top">距离上一名：{{player.upDifference}}{{scoreLabel}}</div>
+      <div class="score_label">{{player.answerCount}}{{scoreLabel}}</div>
+      <div v-show="player.downDifference !== null" class="score_bottom">距离下一名：{{player.downDifference}}{{scoreLabel}}</div>
     </div>
   </div>
 </template>
@@ -19,7 +19,6 @@
     data () {
       return {
         scoreLabel: '分',
-        isOneself: false,
         defaultLogo: require('../assets/player_0_logo.png')
       }
     },
@@ -51,9 +50,6 @@
     created () {
       if (this.$route.name === 'vocabulary') {
         this.scoreLabel = '个'
-      }
-      if (this.player.id === 4) {
-        this.isOneself = true
       }
     },
     mounted () {

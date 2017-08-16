@@ -65,6 +65,7 @@
     },
     mounted () {
       this.query = this.$route.query
+      document.title = '词汇排行榜'
       // 调用词汇排行榜接口
       api.getWordRankList(this.query.studentId, this.query.classId, this.query.access_token).then(res => {
         if (res.data.code === 0) {

@@ -4,21 +4,21 @@
       <div class="top_s_p" :style="{backgroundImage: 'url(' + studentData[1].photo + ')'}">
         <div class="top_l_icon"></div>
       </div>
-      <div class="top_score">{{studentData[1].number}}</div>
+      <div class="top_score">{{studentData[1].answerCount}}</div>
       <div class="top_user">{{studentData[1].studentName}}</div>
     </div>
     <div class="top_m">
       <div class="top_p" :style="{backgroundImage: 'url(' + studentData[0].photo + ')'}">
         <div class="top_m_icon"></div>
       </div>
-      <div class="top_score">{{studentData[0].number}}</div>
+      <div class="top_score">{{studentData[0].answerCount}}</div>
       <div class="top_user">{{studentData[0].studentName}}</div>
     </div>
     <div class="top_r">
       <div class="top_s_p" :style="{backgroundImage: 'url(' + studentData[2].photo + ')'}">
         <div class="top_r_icon"></div>
       </div>
-      <div class="top_score">{{studentData[2].number}}</div>
+      <div class="top_score">{{studentData[2].answerCount}}</div>
       <div class="top_user">{{studentData[2].studentName}}</div>
     </div>
   </div>
