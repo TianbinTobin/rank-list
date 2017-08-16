@@ -67,9 +67,9 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-      <button>查看我的成绩单</button>
-    </div>
+    <!--<div class="footer">-->
+      <!--<button>查看我的成绩单</button>-->
+    <!--</div>-->
   </div>
 </template>
 

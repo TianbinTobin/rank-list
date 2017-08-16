@@ -52,7 +52,8 @@ export default {
    * @returns {AxiosPromise}
    */
   getPKResult (studentId, friendId, access_token) {
-    return Axios.get('/socket/userStudentPk/realTimeResult', {params: {studentId, friendId, access_token}})
+    let type = 1
+    return Axios.get('/socket/userStudentPk/realTimeResult', {params: {studentId, friendId, type, access_token}})
   },
   /**
    * 刷新token

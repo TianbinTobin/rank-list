@@ -216,6 +216,7 @@
     },
     mounted () {
       this.query = this.$route.query
+      document.title = '战绩详情'
       // 调用个人成绩单接口
       api.getPKResult(this.query.studentId, this.query.friendId, this.query.access_token).then(res => {
         if (res && res.data.code === 0) {
