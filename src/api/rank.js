@@ -48,10 +48,11 @@ export default {
    * pk实时对战结果
    * @param studentId
    * @param friendId
+   * @param challengeTime
    * @param access_token
    * @returns {AxiosPromise}
    */
-  getPKResult (studentId, friendId, access_token, challengeTime) {
+  getPKResult (studentId, friendId, challengeTime, access_token) {
     let type = 1
     return Axios.get('/socket/userStudentPk/realTimeResult', {params: {studentId, friendId, challengeTime, type, access_token}})
   },
