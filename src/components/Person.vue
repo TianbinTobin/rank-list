@@ -183,7 +183,7 @@
       api.getPersonInfo(this.query.studentId, this.query.access_token).then(res => {
         if (res.data.code === 0) {
           this.data = res.data.result.data
-          document.title = this.data.studentName ? this.data.studentName : this.data.accountName + '的成绩单'
+          document.title = (this.data.studentName ? this.data.studentName : this.data.accountName) + '的成绩单'
         }
       })
     }
