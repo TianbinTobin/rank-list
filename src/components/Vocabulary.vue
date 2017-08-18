@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div class="header">
+    <div class="header" v-show="this.$root.showTitle">
       <div class="title">
         <span>词汇量排行榜</span>
       </div>

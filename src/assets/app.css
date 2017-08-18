@@ -64,10 +64,6 @@ body{
   width: 100%;
   height: 6rem;
   background-color: #27D4D7;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 11;
 }
 
 .title {
@@ -87,9 +83,7 @@ body{
 .body {
   width: 100%;
   height: 100%;
-  padding: 6rem 0 0;
   box-sizing: border-box;
-  overflow: auto;
 }
 
 .footer {

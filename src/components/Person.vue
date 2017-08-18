@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-    <div class="header">
+    <div class="header" v-show="this.$root.showTitle">
       <div class="title">
-        <span>个人成绩单</span>
+        <span>{{this.data.studentName ? this.data.studentName : this.data.accountName}}的成绩单</span>
       </div>
     </div>
     <div class="body" v-if="data !== null">
@@ -183,6 +183,7 @@
       api.getPersonInfo(this.query.studentId, this.query.access_token).then(res => {
         if (res.data.code === 0) {
           this.data = res.data.result.data
+          document.title = this.data.studentName ? this.data.studentName : this.data.accountName + '的成绩单'
         }
       })
     }
