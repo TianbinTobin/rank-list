@@ -9,9 +9,6 @@
       <top-list :studentData="data"></top-list>
       <rank-list :studentData="data"></rank-list>
     </div>
-    <!--<div class="footer">-->
-      <!--<button>查看我的排行</button>-->
-    <!--</div>-->
   </div>
 </template>
 

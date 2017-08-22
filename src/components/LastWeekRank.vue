@@ -1,17 +1,9 @@
 <template>
   <div class="app">
-    <div class="header" v-show="this.$root.showTitle">
-      <div class="title">
-        <span>昨日排行榜</span>
-      </div>
-    </div>
     <div class="body" v-if="data.length > 0">
       <top-list :studentData="data"></top-list>
       <rank-list :studentData="data"></rank-list>
     </div>
-    <!--<div class="footer">-->
-      <!--<button>查看我的排行</button>-->
-    <!--</div>-->
   </div>
 </template>
 

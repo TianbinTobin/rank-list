@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="header" v-show="this.$root.showTitle">
-      <div class="title">
+      <div class="title" v-if="this.data !== null">
         <span>{{this.data.studentName ? this.data.studentName : this.data.accountName}}的成绩单</span>
       </div>
     </div>
@@ -21,15 +21,15 @@
         </div>
         <div class="info">
           <div class="info_label fl">满分次数</div>
-          <div class="info_text fr">{{data.fullMarkNum}}</div>
+          <div class="info_text fr">{{data.fullMarkNum}}次</div>
         </div>
         <div class="info">
           <div class="info_label fl">不及格次数</div>
-          <div class="info_text fr">{{data.failNum}}</div>
+          <div class="info_text fr">{{data.failNum}}次</div>
         </div>
         <div class="info">
           <div class="info_label fl">未完成次数</div>
-          <div class="info_text fr">{{data.unfinishedNum}}</div>
+          <div class="info_text fr">{{data.unfinishedNum}}次</div>
         </div>
         <div class="info">
           <div class="info_label fl">收到的赞</div>
@@ -41,11 +41,11 @@
         </div>
         <div class="info">
           <div class="info_label fl">正确率</div>
-          <div class="info_text fr">{{data.rightRatio}}%</div>
+          <div class="info_text fr">{{data.rightRatio * 100}}%</div>
         </div>
         <div class="info m_b_10">
           <div class="info_label fl">完成率</div>
-          <div class="info_text fr">{{data.completeRatio}}%</div>
+          <div class="info_text fr">{{data.completeRatio * 100}}%</div>
         </div>
         <div class="info">
           <div class="info_label fl">PK段位</div>
@@ -56,20 +56,17 @@
         </div>
         <div class="info">
           <div class="info_label fl">PK次数</div>
-          <div class="info_text fr">{{data.pkNum}}</div>
+          <div class="info_text fr">{{data.pkNum}}次</div>
         </div>
         <div class="info m_b_10">
           <div class="info_label fl">胜利次数</div>
-          <div class="info_text fr">{{data.victoryNum}}</div>
+          <div class="info_text fr">{{data.victoryNum}}次</div>
         </div>
         <div class="info">
           <span class="info_from">此数据来源于 —— 《Tank English》</span>
         </div>
       </div>
     </div>
-    <!--<div class="footer">-->
-      <!--<button>查看我的成绩单</button>-->
-    <!--</div>-->
   </div>
 </template>
 
@@ -231,43 +228,43 @@
   }
 
   .level_1 {
-    width: 6rem;
-    height: 4.8rem;
+    width: 3rem;
+    height: 2.4rem;
     background: url("../assets/icon_qingtong@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_2 {
-    width: 6rem;
-    height: 4.8rem;
+    width: 3rem;
+    height: 2.4rem;
     background: url("../assets/icon_baiyin@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_3 {
-    width: 7rem;
-    height: 4.4rem;
+    width: 3.5rem;
+    height: 2.2rem;
     background: url("../assets/icon_huangjin@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_4 {
-    width: 6rem;
-    height: 5rem;
+    width: 3rem;
+    height: 2.5rem;
     background: url("../assets/icon_bojin@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_5 {
-    width: 6rem;
-    height: 4.5rem;
+    width: 3rem;
+    height: 2.25rem;
     background: url("../assets/icon_zuanshi@2x.png") no-repeat;
     background-size: cover;
   }
 
   .level_6 {
-    width: 8rem;
-    height: 5.5rem;
+    width: 4rem;
+    height: 2.75rem;
     background: url("../assets/icon_zuiqiang@2x.png") no-repeat;
     background-size: cover;
   }
