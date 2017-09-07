@@ -41,11 +41,11 @@
         </div>
         <div class="info">
           <div class="info_label fl">正确率</div>
-          <div class="info_text fr">{{data.rightRatio * 100}}%</div>
+          <div class="info_text fr">{{Math.round(data.rightRatio * 100)}}%</div>
         </div>
         <div class="info m_b_10">
           <div class="info_label fl">完成率</div>
-          <div class="info_text fr">{{data.completeRatio * 100}}%</div>
+          <div class="info_text fr">{{Math.round(data.completeRatio * 100)}}%</div>
         </div>
         <div class="info">
           <div class="info_label fl">PK段位</div>
