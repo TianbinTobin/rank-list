@@ -102,32 +102,34 @@
     },
     computed: {
       timeSum () {
-        let hours = 0
-        let minutes = 0
-        let seconds = 0
+        let hours = '00'
+        let minutes = '00'
+        let seconds = '00'
         let remainTime = 0
-        let time = ''
+        if (!this.data.timeSum) {
+          this.data.timeSum = 0
+        }
         if (Math.floor(this.data.timeSum / 3600000) > 1) {
           hours = Math.floor(this.data.timeSum / 3600000)
+          if (hours < 10) {
+            hours = '0' + hours
+          }
         }
         remainTime = this.data.timeSum % 3600000
         if (Math.floor(remainTime / 60000) > 1) {
           minutes = Math.floor(remainTime / 60000)
+          if (minutes < 10) {
+            minutes = '0' + minutes
+          }
         }
         remainTime = remainTime % 60000
         if (Math.floor(remainTime / 1000) > 1) {
           seconds = Math.floor(remainTime / 1000)
+          if (seconds < 10) {
+            seconds = '0' + seconds
+          }
         }
-        if (hours > 0) {
-          time += hours + '小时'
-        }
-        if (minutes > 0) {
-          time += minutes + '分'
-        }
-        if (seconds > 0) {
-          time += seconds + '秒'
-        }
-        return time
+        return hours + ':' + minutes + ':' + seconds
       },
       danCss () {
         if (this.data.danId === 1) {
