@@ -1,14 +1,12 @@
 <template>
   <div class="app">
     <div class="body" v-if="data.length > 0">
-      <top-list :studentData="data"></top-list>
       <rank-list :studentData="data"></rank-list>
     </div>
   </div>
 </template>
 
 <script>
-  import TopList from './TopList.vue'
   import RankList from './RankList.vue'
   import api from '../api/rank'
 
@@ -28,13 +26,13 @@
             id: 2,
             photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',
             studentName: '宇文化及',
-            number: 203
+            number: 168
           },
           {
             id: 3,
             photo: 'http://192.168.0.203/image/head/2017/07/ff8080815d3acd7c015d3afd815b0001.png',
             studentName: '田斌',
-            number: 156
+            number: 146
           },
           {
             id: 4,
@@ -52,7 +50,6 @@
       }
     },
     components: {
-      TopList,
       RankList
     },
     mounted () {

@@ -10,8 +10,8 @@ import 'babel-polyfill'
 
 Vue.config.productionTip = false
 
-// axios.defaults.baseURL = 'http://118.190.130.223:8000'
-axios.defaults.baseURL = 'http://192.168.0.203:8000'
+axios.defaults.baseURL = 'http://118.190.130.223:8000'
+// axios.defaults.baseURL = 'http://192.168.0.203:8000'
 
 axios.interceptors.response.use(function (res) {
   // 在这里对返回的数据进行处
